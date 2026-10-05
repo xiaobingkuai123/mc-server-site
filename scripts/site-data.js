@@ -2,7 +2,7 @@ window.SITE_DATA = {
   // 把下面字段替换成你的服务器真实信息
   siteName: "The Potato",
   heroTitle: "The Potato",
-  heroLead: "服务器介绍",
+  heroLead: "一个不限制生电的原版生存服，也能玩轻RPG",
   serverAddress: "mc.the-potato.cn",
   serverState: "服务器状态",
   onlineCount: 1,
@@ -13,23 +13,23 @@ window.SITE_DATA = {
   overview: [
     {
       label: "服务器类型",
-      value: "玩法类型",
+      value: "原版生存 + 轻RPG",
       text: "原版生存、建筑养老、轻RPG、红石"
     },
     {
       label: "开放状态",
-      value: "开放时间",
+      value: "24×7 全天开放",
       text: "24x7全天开放"
     },
     {
       label: "玩家规则",
-      value: "规则摘要",
+      value: "禁止作弊与消极游戏",
       text: "禁止作弊，如：矿透、作弊，禁止消极游戏、斗殴、发表不良言论"
     },
     {
       label: "资源安排",
-      value: "刷新周期",
-      text: "低频率游玩区块不定期刷新"
+      value: "不定期刷新",
+      text: "长期无人活动的区域会不定期清理，释放资源"
     }
   ],
 
@@ -58,9 +58,9 @@ window.SITE_DATA = {
   ],
 
   stats: [
-    { value: "在线时间", label: "在线时间" },
-    { value: "活动频率", label: "活动频率" },
-    { value: "存档计划", label: "存档计划" }
+    { value: "24×7", label: "在线时间" },
+    { value: "每周1~2次", label: "活动频率" },
+    { value: "长期不删档", label: "存档计划" }
   ],
 
   // 服务器风景图，建议放主城、玩家聚落、活动场和地标建筑
@@ -85,26 +85,26 @@ window.SITE_DATA = {
   // 公告写最近发生的具体事，不要写宣传口号
   news: [
     {
-      date: "YYYY-MM-DD",
-      title: "公告标题",
-      text: "版本更新、活动、规则调整或资源刷新"
+      date: "2026-10-04",
+      title: "新功能加入",
+      text: "加入公会功能和皮肤自定义功能，可在菜单里使用"
     },
     {
-      date: "YYYY-MM-DD",
-      title: "公告标题",
-      text: "写玩家最近需要知道的第二条信息"
+      date: "2026-10-02",
+      title: "Bug修复",
+      text: "修复玩家间传送和家传送异常问题"
     },
     {
-      date: "YYYY-MM-DD",
-      title: "公告标题",
-      text: "写玩家最近需要知道的第三条信息"
+      date: "2026-09-28",
+      title: "Bug修复",
+      text: "修复钓鱼竿使用异常问题"
     }
   ],
 
   joinSteps: [
     {
       title: "确认游戏版本",
-      text: "Java版:26.3-1.7.x，基岩版:1.26.52-1.26.30"
+      text: "Java版: 26.3-1.7.x，基岩版: 1.26.52-1.26.30"
     },
     {
       title: "复制服务器地址",
@@ -119,9 +119,9 @@ window.SITE_DATA = {
   community: {
     title: "Q群",
     note: "玩家交流群，可相互交流、反馈问题、提出建议，或只是潜水～",
-    qrLabel: "./assets/images/IMG_6062.jpeg",
+    qrLabel: "二维码图片",
     qrNote: "378071460",
-    qrImage: "",
+    qrImage: "./assets/images/IMG_6062.jpeg",
     links: [
       { label: "服务器规则", href: "./pages/rules.html" },
       { label: "世界地图", href: "./pages/world.html" },
