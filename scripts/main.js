@@ -160,48 +160,89 @@
     showToast.timer = window.setTimeout(() => toast.classList.remove("is-visible"), 2200);
   }
 
-  // 降级复制：优先 Clipboard API，失败则用 execCommand
-  function fallbackCopy(text) {
-    const ta = document.createElement("textarea");
-    ta.value = text;
-    ta.setAttribute("readonly", "");
-    ta.style.position = "fixed";
-    ta.style.top = "-1000px";
-    ta.style.left = "-1000px";
-    ta.style.opacity = "0";
-    document.body.appendChild(ta);
-
-    ta.focus();
-    ta.select();
-    ta.setSelectionRange(0, ta.value.length);
-
-    let ok = false;
-    try {
-      ok = document.execCommand("copy");
-    } catch (error) {
-      ok = false;
+  // 方法一：Clipboard API（仅在 HTTPS 或 localhost 可用）
+  function copyWithClipboardApi(text) {
+    if (!navigator.clipboard || !window.isSecureContext) {
+      return Promise.reject(new Error("Clipboard API unavailable"));
     }
-    ta.remove();
-    return ok;
+    return navigator.clipboard.writeText(text);
+  }
+
+  // 方法二：execCommand 降级方案（HTTP 下生效，兼容移动端与 iOS）
+  function copyWithExecCommand(text) {
+    return new Promise((resolve, reject) => {
+      const textarea = document.createElement("textarea");
+      textarea.value = text;
+      
+      // 防止移动端页面跳动、拉起软键盘或在 iOS 上自动缩放
+      textarea.style.position = "fixed";
+      textarea.style.top = "0";
+      textarea.style.left = "-9999px";
+      textarea.style.opacity = "0";
+      textarea.style.fontSize = "16px";
+      textarea.setAttribute("readonly", "");
+      document.body.appendChild(textarea);
+
+      // 针对 iOS Safari 选区特殊处理
+      if (navigator.userAgent.match(/ipad|iphone/i)) {
+        const range = document.createRange();
+        range.selectNodeContents(textarea);
+        const selection = window.getSelection();
+        if (selection) {
+          selection.removeAllRanges();
+          selection.addRange(range);
+        }
+        textarea.setSelectionRange(0, 999999);
+      } else {
+        textarea.select();
+      }
+
+      let success = false;
+      try {
+        success = document.execCommand("copy");
+      } catch (error) {
+        success = false;
+      }
+
+      textarea.remove();
+
+      if (success) {
+        resolve();
+      } else {
+        reject(new Error("execCommand copy failed"));
+      }
+    });
+  }
+
+  // 综合策略：依次尝试现代 API -> execCommand 降级
+  async function copyText(text) {
+    try {
+      await copyWithClipboardApi(text);
+      return true;
+    } catch (e) {
+      // 降级继续
+    }
+
+    try {
+      await copyWithExecCommand(text);
+      return true;
+    } catch (e) {
+      // 降级继续
+    }
+
+    return false;
   }
 
   async function copyServerAddress() {
     const address = data.serverAddress || "play.example.com";
+    const ok = await copyText(address);
 
-    // 1. 安全上下文下优先用 Clipboard API
-    if (navigator.clipboard && window.isSecureContext) {
-      try {
-        await navigator.clipboard.writeText(address);
-        showToast("服务器地址已复制");
-        return;
-      } catch (error) {
-        // 忽略，走下面的降级
-      }
+    if (ok) {
+      showToast("服务器地址已复制");
+    } else {
+      // 终极兜底：弹窗让用户手动全选复制
+      window.prompt("自动复制失败，请手动复制服务器地址：", address);
     }
-
-    // 2. 降级方案（HTTP 下也能用）
-    const ok = fallbackCopy(address);
-    showToast(ok ? "服务器地址已复制" : "复制失败，请手动复制服务器地址");
   }
 
   function setupCopyButtons() {
