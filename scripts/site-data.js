@@ -119,7 +119,7 @@ window.SITE_DATA = {
   community: {
     title: "Q群",
     note: "玩家交流群，可相互交流、反馈问题、提出建议，或只是潜水～",
-    qrLabel: "二维码图片",
+    qrLabel: "./assets/images/IMG_6062.jpeg",
     qrNote: "378071460",
     qrImage: "",
     links: [
