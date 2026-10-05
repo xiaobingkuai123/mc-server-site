@@ -108,7 +108,7 @@ window.SITE_DATA = {
     },
     {
       title: "复制服务器地址",
-      text: "把 mc.the-potato.cn 添加到多人游戏服务器列表"
+      text: "把 mc.the-potato.cn 添加到多人游戏服务器列表，基岩版需将端口改为32080"
     },
     {
       title: "阅读规则后进入",
