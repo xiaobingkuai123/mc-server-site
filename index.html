@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>服务器名称 - 生存服官网</title>
+  <meta name="description" content="Minecraft 中文服务器官网">
+  <link rel="stylesheet" href="./styles/site.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="返回首页">
+        <span class="brand-mark">C</span>
+        <span>
+          <strong data-site-name>服务器名称</strong>
+          <small>生存服官网</small>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" data-nav-toggle aria-label="打开导航" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" data-nav>
+        <a href="./index.html#top">首页</a>
+        <a href="#features">玩法</a>
+        <a href="#scenery">风景</a>
+        <a href="#news">公告</a>
+        <a href="#join">加入</a>
+        <a href="./pages/rules.html">规则</a>
+        <a href="./pages/world.html">地图</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero section-reveal">
+        <div class="hero-media" aria-hidden="true">
+          <img src="./assets/images/hero-spawn.png" alt="">
+          <div class="hero-shade"></div>
+        </div>
+
+        <div class="hero-layout">
+          <div class="hero-content">
+            <p class="eyebrow">Minecraft Java 生存服务器</p>
+            <h1 data-hero-title>服务器名称</h1>
+            <p class="hero-lead" data-hero-lead>
+              服务器介绍
+            </p>
+
+            <div class="hero-actions">
+              <button class="primary-action" type="button" data-copy-server>
+                <span>复制服务器地址</span>
+                <strong data-server-address>play.example.com</strong>
+              </button>
+              <a class="ghost-action" href="#join">查看加入步骤</a>
+            </div>
+          </div>
+
+          <aside class="server-ticket" aria-label="服务器状态">
+            <div class="ticket-topline">
+              <span class="live-dot"></span>
+              <strong data-server-state>服务器状态</strong>
+            </div>
+            <div class="ticket-count">
+              <span>当前在线</span>
+              <strong><b data-online-count>128</b><small>/</small><b data-max-count>500</b></strong>
+            </div>
+            <dl class="ticket-meta">
+              <div>
+                <dt>服务器版本</dt>
+                <dd data-server-version>1.21.x</dd>
+              </div>
+              <div>
+                <dt>服务器地址</dt>
+                <dd data-server-address-text>play.example.com</dd>
+              </div>
+            </dl>
+            <div class="ticket-tags">
+              <span>半公益</span>
+              <span>小镇建筑</span>
+              <span>周末活动</span>
+            </div>
+          </aside>
+
+          <div class="hero-note" aria-label="近期提醒">
+            <span>最近提醒</span>
+            <strong>资源世界周六刷新，主世界建筑不受影响</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block overview texture-section section-reveal" aria-label="服务器概览">
+        <div class="section-heading">
+          <p class="eyebrow">服务器概览</p>
+          <h2>进服前先看这几件事</h2>
+        </div>
+
+        <div class="overview-grid" data-overview-list></div>
+      </section>
+
+      <section class="section-block split-section section-reveal" id="features">
+        <div class="section-heading sticky-heading">
+          <p class="eyebrow">玩法展示</p>
+          <h2>生存、建筑和活动都留在一个节奏里</h2>
+          <p>
+            在这里展示服务器玩法、建筑区域、活动内容和玩家社区。
+          </p>
+        </div>
+
+        <div class="feature-list" data-feature-list></div>
+      </section>
+
+      <section class="section-band section-reveal">
+        <div class="band-copy">
+          <p class="eyebrow">服务器节奏</p>
+          <h2>服务器节奏</h2>
+          <p>
+            不追求一天毕业，也不强推复杂任务。玩家可以建家、开店、跑活动，也可以只是安静挖矿
+          </p>
+        </div>
+        <div class="band-stats" data-stat-list></div>
+      </section>
+
+      <section class="section-block scenery-section section-reveal" id="scenery">
+        <div class="section-heading scenery-heading">
+          <p class="eyebrow">服务器风景</p>
+          <h2>让玩家先看到这个世界的样子</h2>
+          <p>这里可以展示主城、玩家聚落、活动场和服务器地标。</p>
+        </div>
+
+        <div class="scenery-grid" data-scenery-list></div>
+      </section>
+
+      <section class="section-block news-section texture-section section-reveal" id="news">
+        <div class="section-heading">
+          <p class="eyebrow">最新公告</p>
+          <h2>最近需要知道的事</h2>
+        </div>
+
+        <div class="news-grid" data-news-list></div>
+      </section>
+
+      <section class="section-block join-section section-reveal" id="join">
+        <div class="section-heading">
+          <p class="eyebrow">加入服务器</p>
+          <h2>准备好版本后，就可以进来看看</h2>
+        </div>
+
+        <div class="join-panel">
+          <div class="join-address">
+            <span>服务器地址</span>
+            <strong data-server-address-text>play.example.com</strong>
+            <button type="button" data-copy-server>复制</button>
+          </div>
+
+          <ol class="join-steps" data-join-steps></ol>
+        </div>
+      </section>
+
+      <section class="section-block community-section section-reveal" id="community">
+        <div class="community-panel">
+          <div class="community-copy">
+            <p class="eyebrow">社群</p>
+            <h2 data-community-title>加入玩家交流群</h2>
+            <p data-community-note>扫码进群查看公告、规则、活动和白名单进度</p>
+            <div class="community-links" data-community-links></div>
+          </div>
+
+          <div class="qr-card" aria-label="社群二维码">
+            <div class="qr-frame" data-qr-frame>
+              <span class="qr-placeholder">二维码图片</span>
+            </div>
+            <strong data-qr-label>玩家交流群二维码</strong>
+            <p data-qr-note>社群二维码、群号或邀请链接</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block faq-section section-reveal" id="faq">
+        <div class="section-heading">
+          <p class="eyebrow">常见问题</p>
+          <h2>进服常见问题</h2>
+        </div>
+
+        <div class="faq-list" data-faq-list></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong data-site-name-footer>服务器名称</strong>
+        <span>中文 Minecraft 服务器</span>
+      </div>
+      <a href="#top">返回顶部</a>
+    </footer>
+  </div>
+
+  <div class="toast" data-toast role="status" aria-live="polite"></div>
+
+  <script src="./scripts/site-data.js"></script>
+  <script src="./scripts/main.js"></script>
+</body>
+</html>
