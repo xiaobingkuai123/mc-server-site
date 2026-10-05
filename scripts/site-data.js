@@ -1,35 +1,35 @@
 window.SITE_DATA = {
   // 把下面字段替换成你的服务器真实信息
-  siteName: "服务器名称",
-  heroTitle: "服务器名称",
+  siteName: "The Potato",
+  heroTitle: "The Potato",
   heroLead: "服务器介绍",
-  serverAddress: "play.yourserver.com",
+  serverAddress: "mc.the-potato.cn",
   serverState: "服务器状态",
-  onlineCount: 0,
-  maxCount: 300,
-  serverVersion: "1.21.x",
+  onlineCount: 1,
+  maxCount: 20,
+  serverVersion: "26.3-1.7.x",
 
   // 首页四个概览卡片，写玩家进服前最关心的信息
   overview: [
     {
       label: "服务器类型",
       value: "玩法类型",
-      text: "服务器玩法介绍，例如原版生存、建筑养老、RPG、空岛或小游戏"
+      text: "原版生存、建筑养老、轻RPG、红石"
     },
     {
       label: "开放状态",
       value: "开放时间",
-      text: "开服时间、白名单状态或开放计划"
+      text: "24x7全天开放"
     },
     {
       label: "玩家规则",
       value: "规则摘要",
-      text: "写玩家最需要提前知道的规则边界，例如领地、交易、红石和公共设施"
+      text: "禁止作弊，如：矿透、作弊，禁止消极游戏、斗殴、发表不良言论"
     },
     {
       label: "资源安排",
       value: "刷新周期",
-      text: "写资源世界、主世界、地狱和末地的刷新或保护规则"
+      text: "低频率游玩区块不定期刷新"
     }
   ],
 
@@ -38,22 +38,22 @@ window.SITE_DATA = {
     {
       icon: "01",
       title: "玩法亮点",
-      text: "服务器主要玩法"
+      text: "服务器不限制生电、红石，可以原版生存也可以RPG升级"
     },
     {
       icon: "02",
       title: "建筑与地标",
-      text: "写主城、玩家聚落、公共设施、地标建筑或可申请区域"
+      text: "主城、玩家聚落、公共设施、地标建筑或可申请区域"
     },
     {
       icon: "03",
       title: "活动安排",
-      text: "写活动频率、活动类型、奖励原则和参与方式"
+      text: "Q群不定期发布各种活动"
     },
     {
       icon: "04",
       title: "管理方式",
-      text: "写管理团队如何处理破坏、外挂、争议、机器限制和玩家反馈"
+      text: "在Q群报告管理员，说明情况，管理员将会在空余时间处理"
     }
   ],
 
@@ -104,23 +104,23 @@ window.SITE_DATA = {
   joinSteps: [
     {
       title: "确认游戏版本",
-      text: "写服务器支持的 Minecraft 版本、客户端类型和必要资源包"
+      text: "Java版:26.3-1.7.x，基岩版:1.26.52-1.26.30"
     },
     {
       title: "复制服务器地址",
-      text: "把 play.yourserver.com 添加到多人游戏服务器列表"
+      text: "把 mc.the-potato.cn 添加到多人游戏服务器列表"
     },
     {
       title: "阅读规则后进入",
-      text: "写第一次进服需要完成的步骤，例如白名单、QQ群、Discord 或主城引导"
+      text: "进服后注册账号，第一次注册后需要退出重进以生效"
     }
   ],
 
   community: {
-    title: "社群标题",
-    note: "写群聊、Discord、论坛或玩家社区的说明",
+    title: "Q群",
+    note: "玩家交流群，可相互交流、反馈问题、提出建议，或只是潜水～",
     qrLabel: "二维码图片",
-    qrNote: "社群二维码、群号或邀请链接",
+    qrNote: "378071460",
     qrImage: "",
     links: [
       { label: "服务器规则", href: "./pages/rules.html" },
@@ -131,16 +131,16 @@ window.SITE_DATA = {
 
   faq: [
     {
-      question: "常见问题标题",
-      answer: "写玩家进服前最常问的问题，例如版本、白名单、资源包或账号验证"
+      question: "为什么我注册账号后无法登陆？",
+      answer: "退出重进后即可正常登陆～"
     },
     {
-      question: "常见问题标题",
-      answer: "写第二个常见问题的回答"
+      question: "我的家被破坏怎么办？",
+      answer: "进入Q群后反馈服主，并提供截图和坐标，服主会尽快处理～"
     },
     {
-      question: "常见问题标题",
-      answer: "写第三个常见问题的回答"
+      question: "可以开挂/矿透吗？",
+      answer: "不可以哦～"
     }
   ]
 };
