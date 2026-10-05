@@ -160,15 +160,48 @@
     showToast.timer = window.setTimeout(() => toast.classList.remove("is-visible"), 2200);
   }
 
+  // 降级复制：优先 Clipboard API，失败则用 execCommand
+  function fallbackCopy(text) {
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.top = "-1000px";
+    ta.style.left = "-1000px";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+
+    ta.focus();
+    ta.select();
+    ta.setSelectionRange(0, ta.value.length);
+
+    let ok = false;
+    try {
+      ok = document.execCommand("copy");
+    } catch (error) {
+      ok = false;
+    }
+    ta.remove();
+    return ok;
+  }
+
   async function copyServerAddress() {
     const address = data.serverAddress || "play.example.com";
 
-    try {
-      await navigator.clipboard.writeText(address);
-      showToast("服务器地址已复制");
-    } catch (error) {
-      showToast("复制失败，请手动复制服务器地址");
+    // 1. 安全上下文下优先用 Clipboard API
+    if (navigator.clipboard && window.isSecureContext) {
+      try {
+        await navigator.clipboard.writeText(address);
+        showToast("服务器地址已复制");
+        return;
+      } catch (error) {
+        // 忽略，走下面的降级
+      }
     }
+
+    // 2. 降级方案（HTTP 下也能用）
+    const ok = fallbackCopy(address);
+    showToast(ok ? "服务器地址已复制" : "复制失败，请手动复制服务器地址");
   }
 
   function setupCopyButtons() {
