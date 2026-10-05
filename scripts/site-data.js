@@ -59,7 +59,7 @@ window.SITE_DATA = {
 
   stats: [
     { value: "24×7", label: "在线时间" },
-    { value: "每周1~2次", label: "活动频率" },
+    { value: "每月1~2次", label: "活动频率" },
     { value: "长期不删档", label: "存档计划" }
   ],
 
