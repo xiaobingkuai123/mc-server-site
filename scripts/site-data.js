@@ -120,7 +120,7 @@ window.SITE_DATA = {
     title: "Q群",
     note: "玩家交流群，可相互交流、反馈问题、提出建议，或只是潜水～",
     qrLabel: "二维码图片",
-    qrNote: "378071460",
+    qrNote: "Q群号: 378071460",
     qrImage: "./assets/images/IMG_6062.jpeg",
     links: [
       { label: "服务器规则", href: "./pages/rules.html" },
