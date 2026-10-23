@@ -18,7 +18,7 @@ window.SITE_DATA = {
     },
     {
       label: "开放状态",
-      value: "24×7 全天开放",
+      value: "稳定开放",
       text: "24x7全天开放"
     },
     {
@@ -67,37 +67,37 @@ window.SITE_DATA = {
   scenery: [
     {
       image: "./assets/images/scenery-town.png",
-      title: "主城或出生点",
-      text: "替换成服务器主城、出生点或玩家第一眼会看到的场景说明"
+      title: "主城",
+      text: "梦开始的地方"
     },
     {
       image: "./assets/images/scenery-lake.png",
       title: "玩家聚落或地标",
-      text: "玩家聚落、交通枢纽、地标建筑或建设成果"
+      text: "玩家亲自劳动的成果"
     },
     {
       image: "./assets/images/scenery-night.png",
       title: "活动区域",
-      text: "替换成活动场、小游戏区域、节日场景或特色玩法截图"
+      text: "时不时的新活动"
     }
   ],
 
   // 公告写最近发生的具体事，不要写宣传口号
   news: [
     {
-      date: "2026-10-04",
-      title: "新功能加入",
-      text: "加入公会功能和皮肤自定义功能，可在菜单里使用"
+      date: "2026-10-23",
+      title: "Bug修复",
+      text: "修复了玩家传送时消息发送问题"
     },
     {
-      date: "2026-10-02",
-      title: "Bug修复",
-      text: "修复玩家间传送和家传送异常问题"
+      date: "2026-10-09",
+      title: "新功能",
+      text: "Java版1.21.6+玩家也可以通过菜单创建家/领地"
     },
     {
-      date: "2026-09-28",
-      title: "Bug修复",
-      text: "修复钓鱼竿使用异常问题"
+      date: "2026-10-08",
+      title: "服务器升级",
+      text: "将服务器和插件适配到MC26.2版本"
     }
   ],
 
