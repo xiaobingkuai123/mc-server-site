@@ -104,7 +104,7 @@ window.SITE_DATA = {
   joinSteps: [
     {
       title: "确认游戏版本",
-      text: "Java版: 26.3-1.7.x，基岩版: 1.26.52-1.26.30"
+      text: "Java版: 26.3-1.7.x，基岩版: 1.26.52+"
     },
     {
       title: "复制服务器地址",
@@ -121,7 +121,7 @@ window.SITE_DATA = {
     note: "玩家交流群，可相互交流、反馈问题、提出建议，或只是潜水～",
     qrLabel: "二维码图片",
     qrNote: "Q群号: 378071460",
-    qrImage: "./assets/images/IMG_6062.jpeg",
+    qrImage: "./assets/images/QQ.jpeg",
     links: [
       { label: "服务器规则", href: "./pages/rules.html" },
       { label: "世界地图", href: "./pages/world.html" },
