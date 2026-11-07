@@ -4,11 +4,12 @@ window.SITE_DATA = {
   heroTitle: "The Potato",
   heroLead: "一个不限制生电的原版生存服，也能玩轻RPG",
   serverAddress: "mc.the-potato.cn",
-  serverState: "服务器状态",
-  onlineCount: 1,
-  maxCount: 20,
+  // 在线人数、最大人数和版本会在首页由服务器状态 API 更新。
+  // 以下内容作为 API 尚未返回时的初始/备用显示。
+  serverState: "正在获取服务器状态...",
+  onlineCount: "--",
+  maxCount: "--",
   serverVersion: "26.3-1.7.x",
-
   // 首页四个概览卡片，写玩家进服前最关心的信息
   overview: [
     {
@@ -32,7 +33,6 @@ window.SITE_DATA = {
       text: "长期无人活动的区域会不定期清理，释放资源"
     }
   ],
-
   // 玩法卡片写具体体验，避免写系统名和空泛形容词
   features: [
     {
@@ -56,7 +56,6 @@ window.SITE_DATA = {
       text: "在Q群报告管理员，说明情况，管理员将会在空余时间处理"
     }
   ],
-
   stats: [
     { value: "24×7", label: "在线时间" },
     { value: "每月1~2次", label: "活动频率" },
@@ -81,7 +80,6 @@ window.SITE_DATA = {
       text: "时不时的新活动"
     }
   ],
-
   // 公告写最近发生的具体事，不要写宣传口号
   news: [
     {
@@ -100,7 +98,6 @@ window.SITE_DATA = {
       text: "将服务器和插件适配到MC26.2版本"
     }
   ],
-
   joinSteps: [
     {
       title: "确认游戏版本",
@@ -115,7 +112,6 @@ window.SITE_DATA = {
       text: "进服后注册账号，第一次注册后需要退出重进以生效"
     }
   ],
-
   community: {
     title: "Q群",
     note: "玩家交流群，可相互交流、反馈问题、提出建议，或只是潜水～",
@@ -128,7 +124,6 @@ window.SITE_DATA = {
       { label: "支持服务器", href: "./pages/support.html" }
     ]
   },
-
   faq: [
     {
       question: "为什么我注册账号后无法登陆？",
